@@ -12,11 +12,12 @@ import dagger.Provides
 @Module
 interface DataModule {
 
-
+    @ApplicationScope
     @Binds
     fun bindCoinRepository(impl: CoinRepositoryImpl): CoinRepository
 
     companion object{
+        @ApplicationScope
         @Provides
         fun provideCoinInfoDao(
             application: Application
